@@ -1,3 +1,5 @@
+<%= csrf_meta_tags %>
+<%= csp_meta_tag %>
 <div class="container-fluid">
   <div class="row no-gutter">
     <div class="d-none d-md-flex col-md-4 col-lg-6 bg-image"></div>
@@ -6,7 +8,11 @@
         <div class="container">
           <div class="row">
             <div class="col-md-9 col-lg-8 mx-auto">
-              <h3 class="login-heading mb-4">Welcome back!</h3>
+                <% if flash[:alert] %>
+                    <h3 style="color:red;", class="login-heading mb-4"><%= flash[:alert] %></h3>
+                <% else %>
+                    <h3 class="login-heading mb-4">Welcome back!</h3>
+                <% end %>
                 <%= form_for @user, url: 'login' do |f| %>
                     <%= f.email_field :email, placeholder: "Email address", required: true, class: "form-control", autofocus: true %><br>
                     <%= f.password_field :password, placeholder: "Password", required: true, class: "form-control" %><br>
