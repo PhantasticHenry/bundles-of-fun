@@ -17,6 +17,10 @@ class PurchaseOrdersController < ApplicationController
         end
     end
 
+    def show
+        @purchase_order = PurchaseOrder.find_by(id: params[:id])
+    end
+
     private 
     def po_params
         params.require(:purchase_order).permit(:po, :bin, :start_date, :completion_date)
