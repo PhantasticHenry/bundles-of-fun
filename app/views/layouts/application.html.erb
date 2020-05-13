@@ -12,19 +12,36 @@
 
   <body>
     <% if controller_name != 'static_pages' %>
-<div id="mySidenav" class="sidenav">
-  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-  <a href="/"><i class="fa fa-home"></i> Home</a>
-  <a href="#">Services</a>
-  <a href="#">Clients</a>
-  <a href="#">Contact</a>
-</div>
+      <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="/"><i class="fa fa-home"></i> Home</a>
+        <a href="#">Services</a>
+        <a href="#">Clients</a>
+        <a href="#">Contact</a>
+      </div>
+      <div class="fixed-top" id="main">
+        <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+      </div>
 
-<div class="fixed-top" id="main">
-  <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
-</div>
+    <div class="container-fluid">
+      <div class="row no-gutter">
+        <div class="d-none d-md-flex col-md-4 col-lg-6 new-po-image"></div>
+        <div class="col-md-8 col-lg-6">
+          <div class="login d-flex align-items-center py-5">
+            <div class="container">
+              <div class="row">
+                <div class="col-md-9 col-lg-8 mx-auto">
+                  <%= yield %> 
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <% else %>
+      <%= yield %> 
     <% end %>
-    <%= yield %>
 
         <!--<div class="login-flash-errors">
           <% if flash[:alert] %>
