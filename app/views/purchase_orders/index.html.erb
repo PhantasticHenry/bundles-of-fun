@@ -13,14 +13,14 @@
                     <th>BIN</th>
                     <th>Start Date</th>
                     <th>Exit Date</th>
-                </tr>
                     <% @purchase_orders.each do |po| %>
-                        <td><%= button_to po.po, purchase_order_path(po) %></td>
+                </tr>
+                        <td><%= button_to po.po, purchase_order_path(po), method: "get" %></td>
                         <td><%= po.bin %></td>
                         <td><%= po.start_date %></td>
                         <td><%= po.completion_date %></td>
-                    <% end %>
                 </tr>
+                    <% end %>
                 </table>
             </div>
           </div>
