@@ -19,6 +19,13 @@
                     <%= f.password_field :password, placeholder: "Password", required: true, class: "form-control" %><br>
                     <%= f.password_field :password_confirmation, placeholder: "Confirm password", required: true, class: "form-control" %><br>
                     <%= f.button "sign up", class: "btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2" %>
+                    <hr>
+                    <%= f.button class:"btn-google btn-block text-uppercase" do %>
+                        <i class="fab fa-google mr-2"></i> Sign in with Google
+                    <% end %>
+                    <%= f.button class:"btn-facebook btn-block text-uppercase" do %>
+                        <i class="fab fa-facebook-f mr-2"></i> Sign in with Facebook
+                    <% end %>                    
                 <% end %>
             </div>
           </div>
