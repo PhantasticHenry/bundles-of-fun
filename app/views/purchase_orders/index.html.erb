@@ -1,31 +1,18 @@
-<div class="container-fluid">
-  <div class="row no-gutter">
-    <div class="d-none d-md-flex col-md-4 col-lg-6 new-po-image"></div>
-    <div class="col-md-8 col-lg-6">
-      <div class="login d-flex align-items-center py-5">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-9 col-lg-8 mx-auto">
-            <h2 class="po-index-heading mb-4">All Purchase Orders!</h2>
-                <table>
-                <tr>
-                    <th>P.O. Number</th>
-                    <th>BIN</th>
-                    <th>Start Date</th>
-                    <th>Exit Date</th>
-                    <% @purchase_orders.each do |po| %>
-                </tr>
-                        <td><%= button_to po.po, purchase_order_path(po), method: "get" %></td>
-                        <td><%= po.bin %></td>
-                        <td><%= po.start_date %></td>
-                        <td><%= po.completion_date %></td>
-                </tr>
-                    <% end %>
-                </table>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+<h2 class="po-index-heading mb-4">All Purchase Orders!</h2>
+
+<table>
+    <tr>
+        <th>P.O. Number</th>
+        <th>BIN</th>
+        <th>Start Date</th>
+        <th>Exit Date</th>
+        <% @purchase_orders.each do |po| %>
+    </tr>
+        <td><%= button_to po.po, purchase_order_path(po), method: "get" %></td>
+        <td><%= po.bin %></td>
+        <td><%= po.start_date %></td>
+        <td><%= po.completion_date %></td>
+    </tr>
+        <% end %>
+</table>
+
