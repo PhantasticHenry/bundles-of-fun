@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  resources :purchase_orders
   resources :users
   get 'login', to: 'sessions#new'
   post 'login', to: 'sessions#create'

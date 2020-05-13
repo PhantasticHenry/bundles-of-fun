@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  po: MyString
+  bin: MyString
+  start_date: MyString
+  completion_date: MyString
+
+two:
+  po: MyString
+  bin: MyString
+  start_date: MyString
+  completion_date: MyString
