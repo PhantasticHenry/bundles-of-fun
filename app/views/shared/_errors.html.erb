@@ -1,9 +1,8 @@
 <% if model.errors.any? %>
-  <div id="error_explanation">
-    <%= pluralize(model.errors.count, "error") %> prohibited this from being updated:<br>
- 
-        <% model.errors.full_messages.each do |msg| %>
-                <%= msg %><br>
-        <% end %>
+  <div class="error_messages">
+    <%= pluralize(model.errors.count, "error") %>, update failed!<br>
+      <% model.errors.full_messages.each do |msg| %>
+        <%= msg %><br>
+      <% end %>
   </div>
 <% end %>
