@@ -1,5 +1,6 @@
 class PurchaseOrdersController < ApplicationController
-    
+    before_action :logged_in?, only: [:index, :show, :edit, :destroy]
+    before_action :set_po, only: [:show, :edit, :update, :destroy]
     def index 
         @purchase_orders = PurchaseOrder.all
     end
@@ -18,11 +19,23 @@ class PurchaseOrdersController < ApplicationController
     end
 
     def show
-        @purchase_order = PurchaseOrder.find_by(id: params[:id])
+        
+    end
+
+    def edit 
+
+    end
+
+    def update
+        @purchase_order.update()
     end
 
     private 
     def po_params
         params.require(:purchase_order).permit(:po, :bin, :start_date, :completion_date)
+    end
+
+    def set_po
+        @purchase_order = PurchaseOrder.find_by(id: params[:id])
     end
 end
