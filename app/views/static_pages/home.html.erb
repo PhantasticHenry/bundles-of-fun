@@ -27,8 +27,9 @@
                 <%= link_to "Log Out", logout_path, class: "navbar-brand js-scroll-trigger" %>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto my-2 my-lg-0">
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#nav1">Products</a></li>
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#services">Services</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/">Purchase Orders</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#products">Products</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#materials">Materials</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#portfolio">Portfolio</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#contact">Contact</a></li>
                     </ul>
@@ -36,7 +37,7 @@
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto my-2 my-lg-0">
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#nav1">About</a></li>
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#services">Services</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#nav2">Unsure</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#portfolio">Portfolio</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#contact">Contact</a></li>
                     </ul>
@@ -71,8 +72,8 @@
                 </div>
             </div>
         </header>
-        <!-- About-->
-        <section class="page-section bg-primary" id="nav1">
+        <!-- About/products-->
+        <section class="page-section bg-primary" id="products">
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-lg-8 text-center">
@@ -80,8 +81,8 @@
                         <h2 class="text-white mt-0">Products</h2>
                         <hr class="divider light my-4" />
                         <p class="text-white-50 mb-4">click below to view all products or create new product</p>
-                        <a class="btn btn-light btn-xl js-scroll-trigger" href="#products_path">All Products</a>
-                        <a class="btn btn-light btn-xl js-scroll-trigger" href="#new_product_path">Create New Product</a>
+                        <a class="btn btn-light btn-xl js-scroll-trigger" href="/products">All Products</a>
+                        <a class="btn btn-light btn-xl js-scroll-trigger" href="/products/new">Create New Product</a>
                     <% else %>
                         <h2 class="text-white mt-0">About</h2>
                         <hr class="divider light my-4" />
@@ -92,8 +93,8 @@
                 </div>
             </div>
         </section>
-        <!-- Services-->
-        <section class="page-section" id="services">
+        <!-- materials-->
+        <section class="page-section" id="materials">
             <div class="container">
                 <h2 class="text-center mt-0">At Your Service</h2>
                 <hr class="divider my-4" />
