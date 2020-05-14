@@ -70,3 +70,14 @@
   .error_messages {
     color: red;
   }
+  
+  //test select box
+  select{
+    background: #f4623a;
+    color:#FFF;
+    text-shadow:0 1px 0 rgba(0,0,0,0.4);
+}
+option:not(:checked) { 
+    background-color: white; 
+    color:#000;
+}
