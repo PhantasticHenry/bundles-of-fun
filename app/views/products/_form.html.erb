@@ -1,0 +1,14 @@
+<% if flash[:alert] %>
+    <h3 style="color:red;", class="login-heading mb-4"><%= flash[:alert] %></h3>
+<% else %>
+    <h3 class="login-heading mb-4">Create New Product</h3>
+<% end %>
+<%= form_for @product do |f| %>
+    <%= f.text_field :name, placeholder: "Name", required: true, class: "form-control", autofocus: true %><br>
+    <%= f.text_field :color, placeholder: "Color", required: true, class: "form-control" %><br>
+    <%= f.text_field :size, placeholder: "Size", required: true, class: "form-control" %><br>
+    <%= f.text_field :sku, placeholder: "SKU", required: true, class: "form-control" %><br>
+    <%= f.text_field :category, placeholder: "Category", required: true, class: "form-control" %><br>
+    <%= f.button "Create New Product", class: "btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2" %>
+<% end %>
+            
