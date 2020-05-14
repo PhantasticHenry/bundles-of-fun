@@ -30,10 +30,12 @@
       </div>
       <div class="container-fluid">
         <div class="row no-gutter">
-        <% if controller_name == 'purchase_orders' %>
-          <div class="d-none d-md-flex col-md-4 col-lg-6 po-image"></div>
+          <% if controller_name == 'purchase_orders' %>
+            <div class="d-none d-md-flex col-md-4 col-lg-6 po-image"></div>
+          <% elsif controller_name == 'products' %>
+            <div class="d-none d-md-flex col-md-4 col-lg-6 product-image"></div>
           <% else %>
-          <div class="d-none d-md-flex col-md-4 col-lg-6 session-image"></div>
+            <div class="d-none d-md-flex col-md-4 col-lg-6 session-image"></div>
           <% end %>
           <div class="col-md-8 col-lg-6">
             <div class="login d-flex align-items-center py-5">
