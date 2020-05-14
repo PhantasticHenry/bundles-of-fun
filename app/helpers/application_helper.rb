@@ -3,7 +3,7 @@ module ApplicationHelper
         @current_user ||= Employee.find(session[:user_id]) if session[:user_id]
     end
 
-    def is_logged_in? 
+    def logged_in? 
         !!current_user
     end
 end
