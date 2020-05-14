@@ -16,13 +16,14 @@
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
         <a href="/"><i class="fa fa-home"></i> Home</a>
         <% if controller_name == 'purchase_orders' %>
-        <a href="#all products">Products</a>
-        <a href="#all materials">Materials</a>
-        <% elsif controller_name == 'products' %>
-        <a href="#">Purchase Orders</a>
-        <a href="#">Materials</a>
-        <% end %>
+          <a href="#all products">Products</a>
+          <a href="#all materials">Materials</a>
         <a href="logout">Log Out</a>
+        <% elsif controller_name == 'products' %>
+          <a href="#">Purchase Orders</a>
+          <a href="#">Materials</a>
+        <a href="logout">Log Out</a>
+        <% end %>
       </div>
       <div class="fixed-top" id="main">
         <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
