@@ -28,4 +28,8 @@ class ProductsController < ApplicationController
     def product_params
         params.require(:product).permit(:name, :color, :size, :sku, :category, :user_id, :purchase_order_id)
     end
+
+    def set_product
+        @product = Product.find_by(id: params[:id])
+    end
 end
