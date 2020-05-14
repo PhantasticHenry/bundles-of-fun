@@ -10,7 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_13_031101) do
+ActiveRecord::Schema.define(version: 2020_05_14_175942) do
+
+  create_table "products", force: :cascade do |t|
+    t.string "name"
+    t.string "color"
+    t.string "size"
+    t.string "sku"
+    t.string "category"
+    t.integer "user_id", null: false
+    t.integer "purchase_order_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["purchase_order_id"], name: "index_products_on_purchase_order_id"
+    t.index ["user_id"], name: "index_products_on_user_id"
+  end
 
   create_table "purchase_orders", force: :cascade do |t|
     t.string "po"
@@ -29,4 +43,6 @@ ActiveRecord::Schema.define(version: 2020_05_13_031101) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "products", "purchase_orders"
+  add_foreign_key "products", "users"
 end

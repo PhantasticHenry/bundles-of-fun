@@ -1,34 +1,22 @@
-<div class="container-fluid">
-  <div class="row no-gutter">
-    <div class="d-none d-md-flex col-md-4 col-lg-6 bg-image"></div>
-    <div class="col-md-8 col-lg-6">
-      <div class="login d-flex align-items-center py-5">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-9 col-lg-8 mx-auto">
-                <% if flash[:alert] %>
-                    <h3 style="color:red;", class="login-heading mb-4"><%= flash[:alert] %></h3>
-                <% else %>
-                    <h3 class="login-heading mb-4">Sign Up</h3>
-                <% end %>
-                <%= form_for @user do |f| %>
-                    <%= f.text_field :name, placeholder: "Username", required: true, class: "form-control", autofocus: true %><br>
-                    <%= f.email_field :email, placeholder: "Email address", required: true, class: "form-control", autofocus: true %><br>
-                    <%= f.password_field :password, placeholder: "Password", required: true, class: "form-control" %><br>
-                    <%= f.password_field :password_confirmation, placeholder: "Confirm password", required: true, class: "form-control" %><br>
-                    <%= f.button "sign up", class: "btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2" %>
-                    <hr>
-                    <%= f.button class:"btn-google btn-block text-uppercase" do %>
-                        <i class="fab fa-google mr-2"></i> Sign in with Google
-                    <% end %>
-                    <%= f.button class:"btn-facebook btn-block text-uppercase" do %>
-                        <i class="fab fa-facebook-f mr-2"></i> Sign in with Facebook
-                    <% end %>                    
-                <% end %>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+<div class="col-md-9 col-lg-8 mx-auto">
+    <% if flash[:alert] %>
+        <h3 style="color:red;", class="login-heading mb-4"><%= flash[:alert] %></h3>
+    <% else %>
+        <h3 class="login-heading mb-4">Sign Up</h3>
+    <% end %>
+    <%= form_for @user do |f| %>
+        <%= f.text_field :name, placeholder: "Username", required: true, class: "form-control", autofocus: true %><br>
+        <%= f.email_field :email, placeholder: "Email address", required: true, class: "form-control", autofocus: true %><br>
+        <%= f.password_field :password, placeholder: "Password", required: true, class: "form-control" %><br>
+        <%= f.password_field :password_confirmation, placeholder: "Confirm password", required: true, class: "form-control" %><br>
+        <%= f.button "sign up", class: "btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2" %>
+        <hr>
+        <%= f.button class:"btn-google btn-block text-uppercase" do %>
+            <i class="fab fa-google mr-2"></i> Sign in with Google
+        <% end %>
+        <%= f.button class:"btn-facebook btn-block text-uppercase" do %>
+            <i class="fab fa-facebook-f mr-2"></i> Sign in with Facebook
+        <% end %>                    
+    <% end %>
 </div>
+          
