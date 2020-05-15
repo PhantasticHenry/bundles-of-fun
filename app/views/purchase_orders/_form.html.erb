@@ -1,8 +1,5 @@
-<% if flash[:alert] %>
-    <h3 style="color:red;", class="login-heading mb-4"><%= flash[:alert] %></h3>
-<% else %>
-    <h3 class="login-heading mb-4">Create New Purchase Order</h3>
-<% end %>
+<%= render partial: 'shared/errors', locals: {model: @user} %>
+<br>
 <%= form_for @purchase_order do |f| %>
     <%= f.text_field :po, placeholder: "Purchase Order", required: true, class: "form-control", autofocus: true %><br>
     <%= f.text_field :bin, placeholder: "BIN", required: true, class: "form-control" %><br>
