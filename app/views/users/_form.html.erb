@@ -1,3 +1,5 @@
+<%= render partial: 'shared/errors', locals: {model: @user} %>
+<br>
 <%= form_for @user do |f| %>
     <%= f.text_field :name, placeholder: "Username", required: true, class: "form-control", autofocus: true %><br>
     <%= f.email_field :email, placeholder: "Email address", required: true, class: "form-control", autofocus: true %><br>
