@@ -1,19 +1,37 @@
 class ProductsController < ApplicationController
+    
+    def index 
+        @product = Product.all
+    end
 
-    def new 
-        @product = Product.new
+    def new
+        if params[:purchase_order_id] && purchase_order = PurchaseOrder.find_by(id: params[:purchase_order_id])
+        # @purchase_order = PurchaseOrder.find_by(id: params[:purchase_order_id])
+        
+        # if @purchase_order
+            @product = @purchase_order.products.build
+        else
+            @product = Product.new
+        end
     end
     
-    def create 
-        @product = Product.new(product_params)
+    def create
+        # @product = @purchase_order.products.build(product_params)
+            @product = helper.current_user.products.build(product_params)
+            binding.pry
+        if @product.save 
+            redirect_to product_path(@product)
+        else 
+            render :new
+        end
     end
 
     def show 
-
+        set_product
     end
 
     def edit 
-
+        
     end
 
     def update 
