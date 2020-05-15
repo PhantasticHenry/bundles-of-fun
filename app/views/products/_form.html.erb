@@ -1,4 +1,4 @@
-<%= render partial: 'shared/errors', locals: {model: @user} %>
+<%= render partial: 'shared/errors', locals: {model: @product} %>
 <br>
 <%= form_for @product do |f| %>
     <%= f.text_field :name, placeholder: "Name", required: true, class: "form-control", autofocus: true %><br>
