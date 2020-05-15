@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_14_175942) do
+ActiveRecord::Schema.define(version: 2020_05_15_212413) do
+
+  create_table "po_products", force: :cascade do |t|
+    t.integer "purcahse_order_id", null: false
+    t.integer "product_id", null: false
+    t.integer "quantity"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["product_id"], name: "index_po_products_on_product_id"
+    t.index ["purcahse_order_id"], name: "index_po_products_on_purcahse_order_id"
+  end
 
   create_table "products", force: :cascade do |t|
     t.string "name"
@@ -18,12 +28,8 @@ ActiveRecord::Schema.define(version: 2020_05_14_175942) do
     t.string "size"
     t.string "sku"
     t.string "category"
-    t.integer "user_id", null: false
-    t.integer "purchase_order_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["purchase_order_id"], name: "index_products_on_purchase_order_id"
-    t.index ["user_id"], name: "index_products_on_user_id"
   end
 
   create_table "purchase_orders", force: :cascade do |t|
@@ -43,6 +49,6 @@ ActiveRecord::Schema.define(version: 2020_05_14_175942) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  add_foreign_key "products", "purchase_orders"
-  add_foreign_key "products", "users"
+  add_foreign_key "po_products", "products"
+  add_foreign_key "po_products", "purcahse_orders"
 end
