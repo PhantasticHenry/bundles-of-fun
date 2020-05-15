@@ -1,14 +1,20 @@
-<% if flash[:alert] %>
-    <h3 style="color:red;", class="login-heading mb-4"><%= flash[:alert] %></h3>
-<% else %>
-    <h3 class="login-heading mb-4">Create New Product</h3>
-<% end %>
 <%= form_for @product do |f| %>
     <%= f.text_field :name, placeholder: "Name", required: true, class: "form-control", autofocus: true %><br>
-    <%= f.text_field :color, placeholder: "Color", required: true, class: "form-control" %><br>
-    <%= f.text_field :size, placeholder: "Size", required: true, class: "form-control" %><br>
     <%= f.text_field :sku, placeholder: "SKU", required: true, class: "form-control" %><br>
-    <%= f.text_field :category, placeholder: "Category", required: true, class: "form-control" %><br>
+    <%= f.select :color, ["Coyote", "Black", "Multicam"], prompt: "Color" %><br><br>
+    <%= f.select :category, ["Bag", "Harness", "Accessory"], prompt: "Type"%><br><br>
+    <%= f.select :size, ["XS", "S", "M", "M/L", "L", "XL", "XXL"], prompt: "Size" %><br><br>
+    <%= f.collection_select :purchase_order, PurchaseOrder.all, :id, :po, prompt: "Purchase Order" %><br><hr>
+    or create new purchase order<hr>
+    <% if !params[:purchase_order_id] %>
+        <%= f.fields_for :purchase_order do |po| %>
+            <%= po.text_field :po, placeholder: "Purchase Order", required: true %><br>
+            <%= po.text_field :bin, placeholder: "BIN", required: true %><br>
+            <%= po.text_field :start_date, placeholder: "Start Date", required: true %><br>
+            <%= po.text_field :completion_date, placeholder: "Exit Date", required: true %>
+        <% end %>
+    <% end %>
+        <hr>
     <%= f.button "Create New Product", class: "btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2" %>
 <% end %>
             
