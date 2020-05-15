@@ -37,8 +37,10 @@ ActiveRecord::Schema.define(version: 2020_05_15_212413) do
     t.string "bin"
     t.string "start_date"
     t.string "completion_date"
+    t.integer "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_purchase_orders_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -51,4 +53,5 @@ ActiveRecord::Schema.define(version: 2020_05_15_212413) do
 
   add_foreign_key "po_products", "products"
   add_foreign_key "po_products", "purcahse_orders"
+  add_foreign_key "purchase_orders", "users"
 end
