@@ -1,50 +1,40 @@
 class ProductsController < ApplicationController
-    
+
+    before_action :logged_in?, only: [:edit, :destroy]
+    before_action :set_product, only: [:show, :edit, :update, :destroy]
+
     def index 
         @product = Product.all
     end
 
-    def new
-        if params[:purchase_order_id] && purchase_order = PurchaseOrder.find_by(id: params[:purchase_order_id])
-        # @purchase_order = PurchaseOrder.find_by(id: params[:purchase_order_id])
-        
-        # if @purchase_order
-            @product = purchase_order.products.build
-        else
-            @product = Product.new
-        end
+    def new 
+        @product = Product.new
     end
     
     def create
-        # @product = @purchase_order.products.build(product_params)
-        @product = helpers.current_user.products.build(product_params)
-        # raise params.inspect
-        if @product.save!
-            redirect_to product_path(@product)
+        @product = Product.new(product_params)
+        if @product.save && !product_params.empty?
+            redirect_to products_path
         else 
             render :new
         end
     end
 
-    def show 
-        set_product
-    end
-
-    def edit 
+    def show
         
     end
 
-    def update 
+    def edit 
 
     end
 
-    def destroy
-
+    def update
+ 
     end
 
     private 
     def product_params
-        params.require(:product).permit(:name, :color, :size, :sku, :category, :user_id, :purchase_order_id)
+        params.require(:product).permit(:name, :color, :size, :sku, :categor )
     end
 
     def set_product
