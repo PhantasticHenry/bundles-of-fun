@@ -2,7 +2,8 @@
 <% if flash[:alert] %>
     <h3 style="color:red;", class="login-heading mb-4"><%= flash[:alert] %></h3>
 <% else %>
-    <h3 class="login-heading mb-4">Welcome back!</h3>
+    <h3 class="login-heading mb-4">New Product</h3>
+<% end %>
 <br>
 <%= form_for @product do |f| %>
     <%= f.text_field :name, placeholder: "Name", required: true, class: "form-control", autofocus: true %><br>
@@ -10,16 +11,6 @@
     <%= f.select :color, ["Coyote", "Black", "Multicam"], prompt: "Color" %><br><br>
     <%= f.select :category, ["Bag", "Harness", "Accessory"], prompt: "Type"%><br><br>
     <%= f.select :size, ["XS", "S", "M", "M/L", "L", "XL", "XXL"], prompt: "Size" %><br><br>
-    <%= f.collection_select :purchase_order_id, PurchaseOrder.all, :id, :po, prompt: "Purchase Order" %><br>
-    <!--<% if !params[:purchase_order_id] %>
-    <hr>or create new purchase order<br>
-        <%= f.fields_for :purchase_order do |po| %>
-            <%= po.text_field :po, placeholder: "Purchase Order" %><br>
-            <%= po.text_field :bin, placeholder: "BIN" %><br>
-            <%= po.text_field :start_date, placeholder: "Start Date" %><br>
-            <%= po.text_field :completion_date, placeholder: "Exit Date" %>
-        <% end %>
-    <% end %>-->
         <hr>
     <%= f.button "Create New Product", class: "btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2" %>
 <% end %>
