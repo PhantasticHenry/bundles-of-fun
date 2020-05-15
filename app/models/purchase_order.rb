@@ -1,5 +1,6 @@
 class PurchaseOrder < ApplicationRecord
-    has_many :products
-    has_many :users, through: :products
+    belongs_to :user
+    has_many :po_products, :dependent => :delete_all
+    has_many :products, through: :po_products, :dependent => :delete_all
 
 end
