@@ -4,16 +4,16 @@
     <%= f.select :color, ["Coyote", "Black", "Multicam"], prompt: "Color" %><br><br>
     <%= f.select :category, ["Bag", "Harness", "Accessory"], prompt: "Type"%><br><br>
     <%= f.select :size, ["XS", "S", "M", "M/L", "L", "XL", "XXL"], prompt: "Size" %><br><br>
-    <%= f.collection_select :purchase_order, PurchaseOrder.all, :id, :po, prompt: "Purchase Order" %><br><hr>
-    or create new purchase order<hr>
-    <% if !params[:purchase_order_id] %>
+    <%= f.collection_select :purchase_order_id, PurchaseOrder.all, :id, :po, prompt: "Purchase Order" %><br>
+    <!--<% if !params[:purchase_order_id] %>
+    <hr>or create new purchase order<br>
         <%= f.fields_for :purchase_order do |po| %>
-            <%= po.text_field :po, placeholder: "Purchase Order", required: true %><br>
-            <%= po.text_field :bin, placeholder: "BIN", required: true %><br>
-            <%= po.text_field :start_date, placeholder: "Start Date", required: true %><br>
-            <%= po.text_field :completion_date, placeholder: "Exit Date", required: true %>
+            <%= po.text_field :po, placeholder: "Purchase Order" %><br>
+            <%= po.text_field :bin, placeholder: "BIN" %><br>
+            <%= po.text_field :start_date, placeholder: "Start Date" %><br>
+            <%= po.text_field :completion_date, placeholder: "Exit Date" %>
         <% end %>
-    <% end %>
+    <% end %>-->
         <hr>
     <%= f.button "Create New Product", class: "btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2" %>
 <% end %>
