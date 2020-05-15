@@ -1,0 +1,2 @@
+class PoProductsController < ApplicationController
+end
