@@ -9,7 +9,7 @@ class ProductsController < ApplicationController
         # @purchase_order = PurchaseOrder.find_by(id: params[:purchase_order_id])
         
         # if @purchase_order
-            @product = @purchase_order.products.build
+            @product = purchase_order.products.build
         else
             @product = Product.new
         end
@@ -17,9 +17,9 @@ class ProductsController < ApplicationController
     
     def create
         # @product = @purchase_order.products.build(product_params)
-            @product = helper.current_user.products.build(product_params)
-            binding.pry
-        if @product.save 
+        @product = helpers.current_user.products.build(product_params)
+        # raise params.inspect
+        if @product.save!
             redirect_to product_path(@product)
         else 
             render :new
