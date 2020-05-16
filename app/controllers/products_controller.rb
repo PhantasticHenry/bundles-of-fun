@@ -12,7 +12,7 @@ class ProductsController < ApplicationController
     end
     
     def create
-        @product = Product.new(product_params)
+        @product = helpers.current_user.products.build(product_params)
         if @product.save && !product_params.empty?
             redirect_to products_path
         else 
