@@ -9,13 +9,11 @@ Rails.application.routes.draw do
   resources :sessions, only: [:new, :create, :destroy]
   resources :po_products
   resources :users
+  resources :purchase_orders
   
   resources :products do 
     resources :po_products
   end
 
-  resources :purchase_orders do 
-    resources :po_products
-  end
 
 end
