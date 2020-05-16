@@ -12,5 +12,5 @@
     </tr>
 </table>
 <hr>
-<%= button_to "More Info...", purchase_order_po_products_path(@purchase_order.po_products), method: "get", class: "btn btn-primary" %><br>
+<%= button_to "More Info...", purchase_order_po_products_path(@purchase_order), method: "get", class: "btn btn-primary" %><br>
 <%= button_to "Add Product to Purchase Order", new_purchase_order_po_product_path(@purchase_order), method: "get", class: "btn btn-primary" %>
