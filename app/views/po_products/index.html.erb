@@ -7,13 +7,15 @@
         <th>Size</th>
         <th>SKU</th>
         <th>Category</th>
+        <th>Quantity</th>
         <% @po_products.each do |p| %>
     </tr>
-        <td><%= button_to p.product.name, product_path(p.product.id) %></td>
+        <td><%= button_to p.product.name, product_path(p.product), method: :get %></td>
         <td><%= p.product.color %></td>
         <td><%= p.product.size %></td>
         <td><%= p.product.sku %></td>
         <td><%= p.product.category %></td>
+        <td><%= button_to p.quantity, edit_purchase_order_po_product_path(@purchase_order, p), method: :get %></td>
     </tr>
         <% end %>
 </table>
