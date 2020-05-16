@@ -14,4 +14,5 @@
     </tr>
 </table>
 <hr>
-<%= button_to "Edit", edit_product_path(@product), method: "get", class: "btn btn-primary" %>
+<%= button_to "Edit", edit_product_path(@product), method: :get, class: "btn btn-primary" %><br>
+<%= button_to "Delete", product_path(@product), method: :delete, class: "btn btn-primary",data: {confirm: "Are you sure?"} %>
