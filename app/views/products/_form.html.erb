@@ -1,9 +1,7 @@
+<h3 class="login-heading mb-4">New Product</h3>
 <%= render partial: 'shared/errors', locals: {model: @product} %>
-<% if flash[:alert] %>
-    <h3 style="color:red;", class="login-heading mb-4"><%= flash[:alert] %></h3>
-<% else %>
-    <h3 class="login-heading mb-4">New Product</h3>
-<% end %>
+<%= render partial: 'shared/flash_errors', locals: {model: @product} %>
+
 <br>
 <%= form_for @product do |f| %>
     <%= f.text_field :name, placeholder: "Name", required: true, class: "form-control", autofocus: true %><br>

@@ -1,4 +1,5 @@
 <h2 class="po-index-heading mb-4">All Materials</h2>
+<%= render partial: 'shared/flash_errors', locals: {model: @material} %>
 
 <table>
     <tr>
@@ -18,4 +19,5 @@
         <% end %>
 </table>
 <br>
-<%= button_to "New Material", new_material_path, method: "get", class: "btn btn-primary" %>
+<%= button_to "New Material", new_material_path, method: "get", class: "btn btn-primary" %><hr>
+<%= button_to "Back", :back, class: "btn btn-primary", method: :get %>

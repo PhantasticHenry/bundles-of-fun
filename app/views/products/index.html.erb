@@ -1,8 +1,5 @@
-<% if flash[:alert] %>
-    <h2 style="color:red;", class="po-index-heading mb-4"><%= flash[:alert] %></h2>
-<% else %>
-    <h2 class="po-index-heading mb-4">All Products</h2>
-<% end %>
+<h2 class="po-index-heading mb-4">All Products</h2>
+<%= render partial: 'shared/flash_errors', locals: {model: @product} %>
 
 <table>
     <tr>

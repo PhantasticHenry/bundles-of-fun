@@ -1,9 +1,6 @@
+<h3 class="login-heading mb-4">New Material</h3>
 <%= render partial: 'shared/errors', locals: {model: @material} %>
-<% if flash[:alert] %>
-    <h3 style="color:red;", class="login-heading mb-4"><%= flash[:alert] %></h3>
-<% else %>
-    <h3 class="login-heading mb-4">New Material</h3>
-<% end %>
+<%= render partial: 'shared/flash_errors', locals: {model: @material} %>
 <br>
 <%= form_for @material do |f| %>
     <%= f.text_field :name, placeholder: "Name", required: true, class: "form-control", autofocus: true %><br>
