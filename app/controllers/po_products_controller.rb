@@ -1,7 +1,11 @@
 class PoProductsController < ApplicationController
        
-    def index 
-        @po_product = PoProduct.all
+    def index
+        if params[:purchase_order_id] && purchase_order = PurchaseOrder.find_by(id: params[:purchase_order_id])
+            @po_products = purchase_order.products
+        else
+            @po_products = PoProduct.all
+        end
     end
 
     def new
@@ -45,6 +49,4 @@ class PoProductsController < ApplicationController
     def set_po_product
         @po_product = PoProduct.find_by(id: params[:id])
     end
-end
-
 end
