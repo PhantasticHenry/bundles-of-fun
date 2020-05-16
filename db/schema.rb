@@ -13,13 +13,13 @@
 ActiveRecord::Schema.define(version: 2020_05_15_212413) do
 
   create_table "po_products", force: :cascade do |t|
-    t.integer "purcahse_order_id", null: false
+    t.integer "purchase_order_id", null: false
     t.integer "product_id", null: false
     t.integer "quantity"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["product_id"], name: "index_po_products_on_product_id"
-    t.index ["purcahse_order_id"], name: "index_po_products_on_purcahse_order_id"
+    t.index ["purchase_order_id"], name: "index_po_products_on_purchase_order_id"
   end
 
   create_table "products", force: :cascade do |t|
@@ -52,6 +52,6 @@ ActiveRecord::Schema.define(version: 2020_05_15_212413) do
   end
 
   add_foreign_key "po_products", "products"
-  add_foreign_key "po_products", "purcahse_orders"
+  add_foreign_key "po_products", "purchase_orders"
   add_foreign_key "purchase_orders", "users"
 end
