@@ -19,9 +19,13 @@
           <a href="/products">Products</a>
           <a href="/materials">Materials</a>
         <a href="/logout">Log Out</a>
-        <% else controller_name == 'products' %>
+        <% elsif controller_name == 'products' %>
           <a href="/purchase_orders">Purchase Orders</a>
           <a href="/materials">Materials</a>
+        <a href="/logout">Log Out</a>
+        <% else %>
+          <a href="/purchase_orders">Purchase Orders</a>
+          <a href="/products">Products</a>
         <a href="/logout">Log Out</a>
         <% end %>
       </div>
@@ -34,6 +38,8 @@
             <div class="d-none d-md-flex col-md-4 col-lg-6 po-image"></div>
           <% elsif controller_name == 'products' %>
             <div class="d-none d-md-flex col-md-4 col-lg-6 product-image"></div>
+          <% elsif controller_name == 'materials' %>
+            <div class="d-none d-md-flex col-md-4 col-lg-6 material-image"></div>
           <% else %>
             <div class="d-none d-md-flex col-md-4 col-lg-6 session-image"></div>
           <% end %>
