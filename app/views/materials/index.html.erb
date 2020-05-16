@@ -7,7 +7,7 @@
         <th>Size</th>
         <th>SKU</th>
         <th>Category</th>
-        <% @pmaterials.each do |m| %>
+        <% @materials.each do |m| %>
     </tr>
         <td><%= button_to p.name, product_path(m), method: "get" %></td>
         <td><%= m.color %></td>
