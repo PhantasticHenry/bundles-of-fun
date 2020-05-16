@@ -1,0 +1,17 @@
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Color</th>
+        <th>Size</th>
+        <th>SKU</th>
+        <th>Type</th>
+    </tr>
+        <td><%= @product.name %></td>
+        <td><%= @product.color %></td>
+        <td><%= @product.size %></td>
+        <td><%= @product.sku %></td>
+        <td><%= @product.category %></td>
+    </tr>
+</table>
+<hr>
+<%= button_to "Edit", edit_product_path(@product), method: "get", class: "btn btn-primary" %>
