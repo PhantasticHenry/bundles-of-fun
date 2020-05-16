@@ -1,0 +1,17 @@
+<%= render partial: 'shared/errors', locals: {model: @material} %>
+<% if flash[:alert] %>
+    <h3 style="color:red;", class="login-heading mb-4"><%= flash[:alert] %></h3>
+<% else %>
+    <h3 class="login-heading mb-4">New Material</h3>
+<% end %>
+<br>
+<%= form_for @material do |f| %>
+    <%= f.text_field :name, placeholder: "Name", required: true, class: "form-control", autofocus: true %><br>
+    <%= f.text_field :sku, placeholder: "SKU", required: true, class: "form-control" %><br>
+    <%= f.select :color, ["Coyote", "Black", "Multicam"], prompt: "Color" %><br><br>
+    <%= f.select :category, ["Hardware", "Webbing", "Velcro"], prompt: "Type"%><br><br>
+    <%= f.select :size, ['.5"', '.75"', '1"', '1.5"', '2"'], prompt: "Size" %><br><br>
+        <hr>
+    <%= f.button "Create New Material", class: "btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2" %>
+<% end %>
+            
