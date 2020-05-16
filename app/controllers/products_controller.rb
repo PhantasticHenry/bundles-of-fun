@@ -1,6 +1,7 @@
 class ProductsController < ApplicationController
 
     before_action :set_product, only: [:show, :edit, :update, :destroy]
+    before_action :edit_or_delete, only: [:edit, :update, :destroy]
 
     def index 
         @products = Product.all
@@ -33,6 +34,11 @@ class ProductsController < ApplicationController
         end
     end
 
+    def destroy 
+        @product.destroy 
+        redirect_to products_path
+    end
+
     private 
     def product_params
         params.require(:product).permit(:name, :color, :size, :sku, :category )
@@ -49,7 +55,7 @@ class ProductsController < ApplicationController
        helpers.current_user == @user
     end
 
-    def can_edit
+    def edit_or_delete
         set_product
         redirect_to products_path, alert: "Editing permissions denied" unless !!authorized
     end
