@@ -38,7 +38,11 @@ class PoProductsController < ApplicationController
     end
 
     def update 
-
+        if @po_product.update(po_product_params)
+            redirect_to po_products_path
+        else 
+            render :new
+        end
     end
 
     def destroy
@@ -55,5 +59,10 @@ class PoProductsController < ApplicationController
         if !@po_product
             redirect_to po_products_path
         end
+    end
+
+    def edit_or_delete
+        set_po_product
+        redirect_to products_path, alert: "Editing permissions denied" unless !!helpers.authorized
     end
 end

@@ -53,6 +53,10 @@ class ProductsController < ApplicationController
 
     def edit_or_delete
         set_product
-        redirect_to products_path, alert: "Editing permissions denied" unless !!helpers.authorized
+        redirect_to products_path, alert: "Editing permissions denied" unless authorized
     end
+
+    def authorized
+        current_user == @product.user
+     end
 end

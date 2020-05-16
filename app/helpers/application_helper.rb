@@ -7,8 +7,4 @@ module ApplicationHelper
         !!current_user
     end
 
-
-    def authorized
-        current_user == @product.user
-     end
 end
