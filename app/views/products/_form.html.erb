@@ -12,10 +12,10 @@
     <%= f.select :category, ["Bag", "Harness", "Accessory"], prompt: "Type"%><br><br>
     <%= f.select :size, ["XS", "S", "M", "M/L", "L", "XL", "XXL"], prompt: "Size" %><br><br>
         <hr>
-    <% if edit_product_path %>
-        <%= f.button "Edit Product", class: "btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2" %>
-    <% else %>
+    <% if new_product_path %>
         <%= f.button "Create New Product", class: "btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2" %>
+    <% else %>
+        <%= f.button "Edit Product", class: "btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2" %>
     <% end %>
 <% end %>
             
