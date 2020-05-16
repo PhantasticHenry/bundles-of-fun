@@ -11,7 +11,7 @@
         <% @po_products.each do |p| %>
     </tr>
         <td><%= p.purchase_order.po %></td>
-        <td><%= button_to p.product.name, product_path(p), method: "get" %></td>
+        <td><%= button_to p.product.name, product_path(p.product.id) %></td>
         <td><%= p.product.color %></td>
         <td><%= p.product.size %></td>
         <td><%= p.product.sku %></td>
