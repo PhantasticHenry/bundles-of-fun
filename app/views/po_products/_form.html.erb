@@ -5,12 +5,9 @@
     <h3 class="login-heading mb-4">New Purchase Order Product</h3>
 <% end %>
 <br>
-<%= form_for @product do |f| %>
-    <%= f.text_field :name, placeholder: "Name", required: true, class: "form-control", autofocus: true %><br>
-    <%= f.text_field :sku, placeholder: "SKU", required: true, class: "form-control" %><br>
-    <%= f.select :color, ["Coyote", "Black", "Multicam"], prompt: "Color" %><br><br>
-    <%= f.select :category, ["Bag", "Harness", "Accessory"], prompt: "Type"%><br><br>
-    <%= f.select :size, ["XS", "S", "M", "M/L", "L", "XL", "XXL"], prompt: "Size" %><br><br>
+<%= form_for @po_product do |f| %>
+    <%= f.number_field :quantity, placeholder: "Quantity", required: true, class: "form-control", autofocus: true %><br>
+    <%= f.collection_select :product_id, Product.all, :id, :name, prompt: true %>
         <hr>
-    <%= f.button "Create New Product", class: "btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2" %>
+    <%= f.button "Assign Product", class: "btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2" %>
 <% end %>

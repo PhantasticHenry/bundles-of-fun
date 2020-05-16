@@ -1,0 +1,24 @@
+<h2 class="po-index-heading mb-4">Products for </h2>
+
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Color</th>
+        <th>Size</th>
+        <th>SKU</th>
+        <th>Category</th>
+        <th>Purchase Order</th>
+        <% @po_products.each do |p| %>
+    </tr>
+        <td><%= button_to p.name, product_path(p), method: "get" %></td>
+        <td><%= p.color %></td>
+        <td><%= p.size %></td>
+        <td><%= p.sku %></td>
+        <td><%= p.category %></td>
+        <td><%= p.purchase_order %></td>
+    </tr>
+        <% end %>
+</table>
+<br>
+<%= button_to "Edit Product", edit_purchase_order_po_product_path(@purchase_order), method: "get", class: "btn btn-primary" %>
+

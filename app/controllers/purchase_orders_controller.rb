@@ -32,7 +32,7 @@ class PurchaseOrdersController < ApplicationController
 
     private 
     def po_params
-        params.require(:purchase_order).permit(:po, :bin, :start_date, :completion_date)
+        params.require(:purchase_order).permit(:po, :bin, :start_date, :exit_date)
     end
 
     def set_po

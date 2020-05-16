@@ -9,10 +9,11 @@ class PoProductsController < ApplicationController
     end
 
     def new
+        # @po_product = PoProduct.new(purchase_order_id: params[:purchase_order_id])
         if params[:purchase_order_id] && purchase_order = PurchaseOrder.find_by(id: params[:purchase_order_id])
             @po_product = purchase_order.products.build
         else
-            @po_product = PoProduct.new
+            @po_product = PoProduct.new(purchase_order_id: params[:purchase_order_id])
         end
     end
     
@@ -42,8 +43,8 @@ class PoProductsController < ApplicationController
     end
 
     private 
-    def product_params
-        params.require(:po_product).permit(:quantity, :user_id, :purchase_order_id)
+    def po_product_params
+        params.require(:po_product).permit(:quantity, :product_id, :purchase_order_id)
     end
 
     def set_po_product
