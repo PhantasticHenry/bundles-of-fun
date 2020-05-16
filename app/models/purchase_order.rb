@@ -5,6 +5,7 @@ class PurchaseOrder < ApplicationRecord
     has_many :products, through: :po_products
     
     validates :po, :bin, :start_date, :completion_date, presence: true
+    validates :po, :bin, uniqueness: true
 
     private 
 
