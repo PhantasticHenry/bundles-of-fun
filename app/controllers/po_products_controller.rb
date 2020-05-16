@@ -9,18 +9,18 @@ class PoProductsController < ApplicationController
     end
 
     def new
-        # @po_product = PoProduct.new(purchase_order_id: params[:purchase_order_id])
-        if params[:purchase_order_id] && purchase_order = PurchaseOrder.find_by(id: params[:purchase_order_id])
-            @po_product = purchase_order.products.build
-        else
-            @po_product = PoProduct.new(purchase_order_id: params[:purchase_order_id])
-        end
+        @po_product = PoProduct.new(purchase_order_id: params[:purchase_order_id])
+        # if params[:purchase_order_id] && purchase_order = PurchaseOrder.find_by(id: params[:purchase_order_id])
+        #     @po_product = purchase_order.products.build
+        # else
+        #     @po_product = PoProduct.new(purchase_order_id: params[:purchase_order_id])
+        # end
     end
     
     def create
-        @po_product = product.po_products.build(po_product_params)
+        @po_product = PoProduct.new(po_product_params)
         if @po_product.save!
-            redirect_to po_product_path(@po_product)
+            redirect_to purchase_orders_path(@po_product.purchase_order)
         else 
             render :new
         end
