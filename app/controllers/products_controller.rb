@@ -1,6 +1,5 @@
 class ProductsController < ApplicationController
 
-    before_action :logged_in?, only: [:edit, :destroy]
     before_action :set_product, only: [:show, :edit, :update, :destroy]
 
     def index 
@@ -44,5 +43,14 @@ class ProductsController < ApplicationController
         if !@product
             redirect_to products_path
         end
+    end
+
+    def authorized
+       helpers.current_user == @user
+    end
+
+    def can_edit
+        set_product
+        redirect_to products_path, alert: "Editing permissions denied" unless !!authorized
     end
 end
