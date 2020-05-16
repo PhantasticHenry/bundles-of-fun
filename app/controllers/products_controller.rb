@@ -20,16 +20,18 @@ class ProductsController < ApplicationController
         end
     end
 
-    def show
-        
+    def show 
     end
 
     def edit 
-
     end
 
     def update
- 
+        if @product.update(product_params)
+            redirect_to product_path(@product)
+        else
+            render :new
+        end
     end
 
     private 
