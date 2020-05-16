@@ -49,5 +49,8 @@ class PoProductsController < ApplicationController
 
     def set_po_product
         @po_product = PoProduct.find_by(id: params[:id])
+        if !@po_product
+            redirect_to po_products_path
+        end
     end
 end

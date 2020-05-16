@@ -37,5 +37,8 @@ class PurchaseOrdersController < ApplicationController
 
     def set_po
         @purchase_order = PurchaseOrder.find_by(id: params[:id])
+        if !purchase_order
+            redirect_to purchase_orders_path
+        end
     end
 end
