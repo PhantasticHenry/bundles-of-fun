@@ -1,4 +1,7 @@
 class PoProductsController < ApplicationController
+    
+    before_action :set_po_product, only: [:show, :edit, :update, :destroy]
+    before_action :edit_or_delete, only: [:edit, :update, :destroy]
        
     def index
         if params[:purchase_order_id] && @purchase_order = PurchaseOrder.find_by(id: params[:purchase_order_id])
