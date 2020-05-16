@@ -36,7 +36,7 @@ ActiveRecord::Schema.define(version: 2020_05_15_212413) do
     t.string "po"
     t.string "bin"
     t.string "start_date"
-    t.string "exit_date"
+    t.string "completion_date"
     t.integer "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
