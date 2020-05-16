@@ -15,9 +15,9 @@ Rails.application.routes.draw do
     resources :po_products
   end
   
-  resources :products do 
-    resources :po_products
-  end
+  # resources :products do 
+  #   resources :po_products
+  # end
 
 
 end
