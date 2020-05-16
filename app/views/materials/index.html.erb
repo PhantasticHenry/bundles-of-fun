@@ -1,0 +1,21 @@
+<h2 class="po-index-heading mb-4">All Materials</h2>
+
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Color</th>
+        <th>Size</th>
+        <th>SKU</th>
+        <th>Category</th>
+        <% @pmaterials.each do |m| %>
+    </tr>
+        <td><%= button_to p.name, product_path(m), method: "get" %></td>
+        <td><%= m.color %></td>
+        <td><%= m.size %></td>
+        <td><%= m.sku %></td>
+        <td><%= m.category %></td>
+    </tr>
+        <% end %>
+</table>
+<br>
+<%= button_to "New Material", new_material_path, method: "get", class: "btn btn-primary" %>
