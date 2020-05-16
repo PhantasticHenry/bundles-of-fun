@@ -1,5 +1,5 @@
 class MaterialsController < ApplicationController
-    before_action :logged_in?, only: [:edit, :destroy]
+
     before_action :set_material, only: [:show, :edit, :update, :destroy]
 
     def index 
@@ -42,5 +42,6 @@ class MaterialsController < ApplicationController
             reidrect_to materials_path
         end
     end
+
 
 end
