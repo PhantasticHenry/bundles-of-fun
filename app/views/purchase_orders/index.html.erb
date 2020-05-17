@@ -1,5 +1,5 @@
 <h2 class="po-index-heading mb-4">All Purchase Orders!</h2>    
-<%= render partial: 'shared/flash_errors', locals: {model: @product} %>
+<%= render partial: 'shared/flash_errors', locals: {model: @purchase_order} %>
 <table>
     <tr>
         <th>P.O. Number</th>
@@ -8,7 +8,7 @@
         <th>Exit Date</th>
         <% @purchase_orders.each do |po| %>
     </tr>
-        <td><%= button_to po.po, purchase_order_path(po), method: "get" %></td>
+        <td><%= button_to po.po, purchase_order_path(po), method: :get %></td>
         <td><%= po.bin %></td>
         <td><%= po.start_date %></td>
         <td><%= po.completion_date %></td>
@@ -16,7 +16,7 @@
         <% end %>
 </table>
 <br>
-<%= button_to "New Purchase Order", new_purchase_order_path, method: "get", class: "btn btn-primary" %><hr>
-<%= button_to "Back", :back, class: "btn btn-primary", method: :get %>
+<%= link_to "New Purchase Order", new_purchase_order_path, class: "btn btn-primary" %><hr>
+<%= link_to "Back", :back, class: "btn btn-primary" %>
 
 
