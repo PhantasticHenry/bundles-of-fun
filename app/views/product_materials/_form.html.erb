@@ -9,9 +9,9 @@
         <hr>
     <%= f.button "Assign Material to Product", class: "btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2" %>
     <hr>
-    Dont't see correct product or material?
+    Didn't find product or material?
     <hr>
-    <%= button_to "Create Product", new_product_path, method: :get, class: "btn btn-primary" %><br>
-    <%= button_to "Create Material", new_material_path, method: :get, class: "btn btn-primary" %><hr>
-    <%= button_to "Back", :back, method: :get, class: "btn btn-primary" %>
+    <%= link_to "Create Product", new_product_path, class: "btn btn-primary" %>&nbsp;&nbsp;&nbsp; OR &nbsp;&nbsp;&nbsp;
+    <%= link_to "Create Material", new_material_path, class: "btn btn-primary" %><hr>
+    <%= link_to "Back", :back, class: "btn btn-primary" %>
 <% end %>
