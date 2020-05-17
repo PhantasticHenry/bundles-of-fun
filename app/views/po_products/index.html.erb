@@ -1,4 +1,4 @@
-<h2 class="po-index-heading mb-4">Product of Purchase Order # <%= @purchase_order.po %></h2>
+<h2 class="po-index-heading mb-4">Product of Purchase Order # <%= @purchase_order.try(:po) %></h2>
 <%= render partial: 'shared/flash_errors', locals: {model: @po_product} %>
 
 
@@ -17,7 +17,7 @@
         <td><%= p.product.size %></td>
         <td><%= p.product.sku %></td>
         <td><%= p.product.category %></td>
-        <td><%= button_to p.quantity, edit_purchase_order_po_product_path(@purchase_order, p), method: :get %></td>
+        <td><%= button_to p.quantity, edit_purchase_order_po_product_path(p.purchase_order, p), method: :get %></td>
     </tr>
         <% end %>
 </table>
