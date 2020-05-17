@@ -12,7 +12,7 @@ class PurchaseOrdersController < ApplicationController
     
     def create
         @purchase_order = helpers.current_user.purchase_orders.build(po_params)
-        if @purchase_order.save && !po_params.empty?
+        if @purchase_order.save
             redirect_to purchase_orders_path
         else 
             render :new
