@@ -14,6 +14,6 @@
 <hr>
 <%= button_to "More Info...", purchase_order_po_products_path(@purchase_order), method: "get", class: "btn btn-primary" %><br>
 <%= button_to "Edit", edit_purchase_order_path(@purchase_order), method: :get, class: "btn btn-primary" %><br>
-<%= button_to "Delete", purchase_order_path(@purchase_order), method: :delete, class: "btn btn-primary",data: {confirm: "Are you sure?"} %><hr>
-<%= button_to "Add Material to Product", new_product_product_material_path(@purchase_order), method: "get", class: "btn btn-primary" %><hr>
+<%= button_to "Delete", purchase_order_path(@purchase_order), method: :delete, class: "btn btn-primary",data: {confirm: "Are you sure?"} %><br>
+<%= button_to "Add Product to Purchase Order", new_purchase_order_po_product_path(@purchase_order), method: "get", class: "btn btn-primary" %><hr>
 <%= button_to "Back", :back, class: "btn btn-primary", method: :get %>
