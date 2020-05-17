@@ -1,4 +1,5 @@
 class PurchaseOrdersController < ApplicationController
+    before_action :logged_in?
     before_action :logged_in?, only: [:edit, :destroy]
     before_action :set_po, only: [:show, :edit, :update, :destroy]
     def index 

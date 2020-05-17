@@ -1,5 +1,5 @@
 class PoProductsController < ApplicationController
-    
+    before_action :logged_in?
     before_action :set_po_product, only: [:show, :edit, :update, :destroy]
     before_action :edit_or_delete, only: [:edit, :update, :destroy]
        
