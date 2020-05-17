@@ -51,13 +51,13 @@ class ProductMaterialsController < ApplicationController
     def set_product_material
         @product_material = ProductMaterial.find_by(id: params[:id])
         if !@product_material
-            redirect_to materials_path
+            redirect_to product_materials_path
         end
     end
 
     def edit_or_delete
         set_product_material
-        redirect_to materials_path, alert: "Editing permissions denied" unless !!authorized
+        redirect_to product_materials_path, alert: "Editing permissions denied" unless !!authorized
     end
 
     def authorized
