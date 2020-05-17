@@ -4,8 +4,8 @@ class ProductMaterialsController < ApplicationController
     before_action :edit_or_delete, only: [:edit, :update, :destroy]
        
     def index
-        if params[:product_material_id] && @purchase_order = PurchaseOrder.find_by(id: params[:product_material_id])
-            @product_materials = @purchase_order.product_materials
+        if params[:product_id] && @product = Product.find_by(id: params[:product_id])
+            @product_materials = @product.product_materials
         else
             @product_materials = ProductMaterial.all
         end
