@@ -58,7 +58,7 @@ class MaterialsController < ApplicationController
     end
 
     def authorized 
-        helpers.current_user == @product.user
+        helpers.current_user == @material.user
     end
 
 
