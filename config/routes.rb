@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   
-  resources :product_materials
   resources :materials
   root 'static_pages#home'
   get 'login', to: 'sessions#new'
@@ -10,13 +9,16 @@ Rails.application.routes.draw do
   
   resources :sessions, only: [:new, :create, :destroy]
   resources :po_products
+  resources :product_materials
   resources :users
   
   resources :purchase_orders do 
     resources :po_products
   end
   
-  resources :products
+  resources :products do 
+    resources :product_materials
+  end
   
 
 
