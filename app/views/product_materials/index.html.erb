@@ -1,0 +1,24 @@
+<%= render partial: 'shared/flash_errors', locals: {model: @po_product} %>
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Color</th>
+        <th>Size</th>
+        <th>SKU</th>
+        <th>Category</th>
+        <th>Quantity</th>
+        <% @product_materials.each do |pm| %>
+    </tr>
+        <td><%= button_to pm.product_material.name, product_path(pm.product_material), method: :get %></td>
+        <td><%= pm.product_material.color %></td>
+        <td><%= pm.product_material.size %></td>
+        <td><%= pm.product_material.sku %></td>
+        <td><%= pm.product_material.category %></td>
+        <td><%= button_to pm.quantity, edit_product_product_material_path(@product, pm), method: :get %></td>
+    </tr>
+        <% end %>
+</table>
+<hr>
+<%= button_to "Back", :back, class: "btn btn-primary", method: :get %>
+
+
