@@ -10,7 +10,11 @@
     <%= f.select :size, ['.5"', '.75"', '1"', '1.5"', '2"'], prompt: "Size" %><br><br>
 <%= button_to "Back", :back, class: "btn btn-primary", method: :get %>
         <hr>
-    <%= f.button "Create New Material", class: "btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2" %>
+    <% if new_product_path %>
+        <%= f.button "Create New Material", class: "btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2" %>
+    <% else %>
+        <%= f.button "Edit Material", class: "btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2" %>
+    <% end %>
 <% end %>
 
             
