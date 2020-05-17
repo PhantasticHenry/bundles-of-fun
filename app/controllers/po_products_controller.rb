@@ -30,16 +30,15 @@ class PoProductsController < ApplicationController
     end
 
     def show 
-        set_po_product
+        binding.pry
     end
 
     def edit 
-        
     end
 
     def update 
         if @po_product.update(po_product_params)
-            redirect_to po_products_path
+            redirect_to purchase_order_po_products_path(@po_product)
         else 
             render :new
         end
@@ -63,6 +62,10 @@ class PoProductsController < ApplicationController
 
     def edit_or_delete
         set_po_product
-        redirect_to products_path, alert: "Editing permissions denied" unless !!helpers.authorized
+        redirect_to po_products_path, alert: "Editing permissions denied" unless !!authorized
     end
+
+    def authorized
+        helpers.current_user == @po_product.product.user
+     end
 end
