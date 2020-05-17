@@ -1,4 +1,4 @@
-<h3 class="login-heading mb-4"><%= @product_material.material.name %></h3>
+<h3 class="login-heading mb-4"><%= @product_material.material.try(:name) %></h3>
 <%= render partial: 'shared/errors', locals: {model: @product_material} %>
 <%= render partial: 'shared/flash_errors', locals: {model: @product_material} %>
 <table>
@@ -9,6 +9,6 @@
     </tr>
 </table>
 <hr>
-<%= button_to "Edit", edit_product_material_path(@product_material), method: :get, class: "btn btn-primary" %><br>
-<%= button_to "Delete", product_material_path(@product_material), method: :delete, class: "btn btn-primary",data: {confirm: "Are you sure?"} %><hr>
-<%= button_to "Back", :back, class: "btn btn-primary", method: :get %>
+<%= link_to "Edit", edit_product_material_path(@product_material), class: "btn btn-primary" %>&nbsp;&nbsp;&nbsp; OR &nbsp;&nbsp;&nbsp;
+<%= link_to "Delete", product_material_path(@product_material), method: :delete, class: "btn btn-primary",data: {confirm: "Are you sure?"} %><hr>
+<%= link_to "Back", :back, class: "btn btn-primary" %>
