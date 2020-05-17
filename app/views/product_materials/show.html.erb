@@ -1,13 +1,14 @@
-<%= render partial: 'shared/errors', locals: {model: @po_product} %>
-<%= render partial: 'shared/flash_errors', locals: {model: @po_product} %>
+<h3 class="login-heading mb-4"><%= @product_material.material.name %></h3>
+<%= render partial: 'shared/errors', locals: {model: @product_material} %>
+<%= render partial: 'shared/flash_errors', locals: {model: @product_material} %>
 <table>
     <tr>
         <th>Quantity</th>
     </tr>
-        <td><%= @po_product.quantity %></td>
+        <td><%= @product_material.quantity %></td>
     </tr>
 </table>
 <hr>
-<%= button_to "Edit", edit_po_product_path(@po_product), method: :get, class: "btn btn-primary" %><br>
-<%= button_to "Delete", po_product_path(@po_product), method: :delete, class: "btn btn-primary",data: {confirm: "Are you sure?"} %><hr>
+<%= button_to "Edit", edit_product_material_path(@product_material), method: :get, class: "btn btn-primary" %><br>
+<%= button_to "Delete", product_material_path(@product_material), method: :delete, class: "btn btn-primary",data: {confirm: "Are you sure?"} %><hr>
 <%= button_to "Back", :back, class: "btn btn-primary", method: :get %>
