@@ -10,7 +10,7 @@
         <th>Category</th>
         <% @products.each do |p| %>
     </tr>
-        <td><%= button_to p.name, product_path(p), method: "get" %></td>
+        <td><%= button_to p.name, product_path(p), method: :get %></td>
         <td><%= p.color %></td>
         <td><%= p.size %></td>
         <td><%= p.sku %></td>
@@ -19,6 +19,6 @@
         <% end %>
 </table>
 <br>
-<%= button_to "New Product", new_product_path, method: :get, class: "btn btn-primary" %><br>
-<%= button_to "Add Product to P.O.", new_po_product_path, method: :get, class: "btn btn-primary" %><hr>
-<%= button_to "Back", :back, class: "btn btn-primary", method: :get %>
+<%= link_to "New Product", new_product_path, class: "btn btn-primary" %>&nbsp;&nbsp;&nbsp; OR &nbsp;&nbsp;&nbsp;
+<%= link_to "Add Product to P.O.", new_po_product_path, class: "btn btn-primary" %><hr>
+<%= link_to "Back", :back, class: "btn btn-primary" %>
