@@ -44,7 +44,8 @@ class PoProductsController < ApplicationController
     end
 
     def destroy
-
+        @po_product.destroy 
+        redirect_to root_path
     end
 
     private 
