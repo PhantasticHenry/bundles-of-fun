@@ -4,12 +4,9 @@
 <br>
 <%= form_for @po_product do |f| %>
     <%= f.number_field :quantity, placeholder: "Quantity", required: true, class: "form-control", autofocus: true %><br>
-    <%= f.collection_select :product_id, Product.all, :id, :name, prompt: "Product" %>
-    
-    <br><br>
-
+    <%= f.collection_select :product_id, Product.all, :id, :name, prompt: "Product" %><br><br>
     <%= f.collection_select :purchase_order_id, PurchaseOrder.all, :id, :po, prompt: "Purchase Order" %>
-    <br><br>
+    <!--<br><br>
     <% if !params[:purchase_order_id] %>
         <h4>Or add a new purchase order:</h4>
 
@@ -19,7 +16,13 @@
             <%= po.text_field :start_date, placeholder: "Start Date" %><br>
             <%= po.text_field :completion_date, placeholder: "Exit Date" %><br>
         <% end %>
-    <% end %>
+    <% end %>-->
         <hr>
     <%= f.button "Assign Product to P.O.", class: "btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2" %>
+    <hr>
+    Dont't see correct product or purchase order?
+    <hr>
+    <%= button_to "Create Product", new_product_path, method: :get, class: "btn btn-primary" %><br>
+    <%= button_to "Create Purchase Order", new_purchase_order_path, method: :get, class: "btn btn-primary" %><hr>
+    <%= button_to "Back", :back, class: "btn btn-primary", method: :get %>
 <% end %>
