@@ -9,6 +9,6 @@
     </tr>
 </table>
 <hr>
-<%= button_to "Edit", edit_po_product_path(@po_product), method: :get, class: "btn btn-primary" %><br>
-<%= button_to "Delete", po_product_path(@po_product), method: :delete, class: "btn btn-primary",data: {confirm: "Are you sure?"} %><hr>
-<%= button_to "Back", :back, class: "btn btn-primary", method: :get %>
+<%= link_to "Edit", edit_po_product_path(@po_product), class: "btn btn-primary" %>&nbsp;&nbsp;&nbsp;
+<%= link_to "Delete", po_product_path(@po_product), method: :delete, class: "btn btn-primary",data: {confirm: "Are you sure?"} %><hr>
+<%= link_to "Back", :back, class: "btn btn-primary" %>
