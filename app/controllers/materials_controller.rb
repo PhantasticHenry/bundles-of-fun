@@ -48,7 +48,7 @@ class MaterialsController < ApplicationController
     def set_material
         @material = Material.find_by(id: params[:id])
         if !@material 
-            reidrect_to materials_path
+            reidirect_to materials_path
         end
     end
 
