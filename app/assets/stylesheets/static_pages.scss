@@ -6141,7 +6141,12 @@ button.bg-light:focus {
 }
 
 .bg-dark {
-  background-color: #343a40 !important;
+  background-color: #af0101 !important;
+}
+.bg-mask {
+  background-image: url('mrcovid.jpg') !important;
+  background-size: fill;
+  background-position: center;
 }
 
 a.bg-dark:hover, a.bg-dark:focus,
@@ -9749,6 +9754,9 @@ button.bg-dark:focus {
 
 .text-white {
   color: #fff !important;
+}
+.text-red {
+  color: rgb(184, 18, 18) !important;
 }
 
 .text-primary {
