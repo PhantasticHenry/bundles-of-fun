@@ -24,13 +24,12 @@ class PoProductsController < ApplicationController
         @po_product = PoProduct.new(po_product_params)
         if @po_product.save!
             redirect_to purchase_orders_path(@po_product.purchase_order)
-        else 
+        else
             render :new
         end
     end
 
     def show 
-        binding.pry
     end
 
     def edit 
@@ -50,7 +49,7 @@ class PoProductsController < ApplicationController
 
     private 
     def po_product_params
-        params.require(:po_product).permit(:quantity, :product_id, :purchase_order_id)
+        params.require(:po_product).permit(:quantity, :product_id, :purchase_order_id, purchase_order_attributes: [:po, :bin, :start_date, :completion_date])
     end
 
     def set_po_product
