@@ -12,7 +12,7 @@ class ProductMaterialsController < ApplicationController
     end
 
     def new
-        @product_material = ProductMaterial.new(product_material_id: params[:product_material_id])
+        @product_material = ProductMaterial.new(product_id: params[:product_id])
     end
     
     def create
