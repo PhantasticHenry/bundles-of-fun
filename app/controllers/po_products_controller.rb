@@ -13,11 +13,6 @@ class PoProductsController < ApplicationController
 
     def new
         @po_product = PoProduct.new(purchase_order_id: params[:purchase_order_id])
-        # if params[:purchase_order_id] && purchase_order = PurchaseOrder.find_by(id: params[:purchase_order_id])
-        #     @po_product = purchase_order.products.build
-        # else
-        #     @po_product = PoProduct.new(purchase_order_id: params[:purchase_order_id])
-        # end
     end
     
     def create
