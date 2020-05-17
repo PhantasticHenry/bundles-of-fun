@@ -1,0 +1,13 @@
+<%= render partial: 'shared/errors', locals: {model: @po_product} %>
+<%= render partial: 'shared/flash_errors', locals: {model: @po_product} %>
+<table>
+    <tr>
+        <th>Quantity</th>
+    </tr>
+        <td><%= @po_product.quantity %></td>
+    </tr>
+</table>
+<hr>
+<%= button_to "Edit", edit_po_product_path(@po_product), method: :get, class: "btn btn-primary" %><br>
+<%= button_to "Delete", po_product_path(@po_product), method: :delete, class: "btn btn-primary",data: {confirm: "Are you sure?"} %><hr>
+<%= button_to "Back", :back, class: "btn btn-primary", method: :get %>
