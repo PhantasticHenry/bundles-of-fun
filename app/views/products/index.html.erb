@@ -19,5 +19,6 @@
         <% end %>
 </table>
 <br>
-<%= button_to "New Product", new_product_path, method: "get", class: "btn btn-primary" %><hr>
+<%= button_to "New Product", new_product_path, method: :get, class: "btn btn-primary" %><br>
+<%= button_to "Add Product to P.O.", new_po_product_path, method: :get, class: "btn btn-primary" %><hr>
 <%= button_to "Back", :back, class: "btn btn-primary", method: :get %>
