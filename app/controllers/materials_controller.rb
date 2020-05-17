@@ -13,7 +13,7 @@ class MaterialsController < ApplicationController
     
     def create
         @material = helpers.current_user.materials.build(material_params)
-        if @material.save && !material_params.empty?
+        if @material.save
             redirect_to materials_path
         else 
             render :new
