@@ -1,0 +1,17 @@
+<h3 class="login-heading mb-4">New Product Material</h3>
+<%= render partial: 'shared/errors', locals: {model: @product_material} %>
+<%= render partial: 'shared/flash_errors', locals: {model: @product_material} %>
+<br>
+<%= form_for @product_material do |f| %>
+    <%= f.number_field :quantity, placeholder: "Quantity", required: true, class: "form-control", autofocus: true %><br>
+    <%= f.collection_select :product_id, Product.all, :id, :name, prompt: "Product" %><br><br>
+    <%= f.collection_select :material_id, Material.all, :id, :name, prompt: "Material" %>
+        <hr>
+    <%= f.button "Assign Material to Product", class: "btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2" %>
+    <hr>
+    Dont't see correct product or material?
+    <hr>
+    <%= button_to "Create Product", new_product_path, method: :get, class: "btn btn-primary" %><br>
+    <%= button_to "Create Material", new_material_path, method: :get, class: "btn btn-primary" %><hr>
+    <%= button_to "Back", :back, method: :get, class: "btn btn-primary" %>
+<% end %>
