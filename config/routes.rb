@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  resources :product_materials
   resources :materials
   root 'static_pages#home'
   get 'login', to: 'sessions#new'

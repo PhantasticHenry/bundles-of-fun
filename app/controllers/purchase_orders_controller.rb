@@ -31,6 +31,11 @@ class PurchaseOrdersController < ApplicationController
         @purchase_order.update()
     end
 
+    def destroy 
+        @purchase_order.destroy 
+        redirect_to purchase_orders_path
+    end
+
     private 
     def po_params
         params.require(:purchase_order).permit(:po, :bin, :start_date, :completion_date)
@@ -42,4 +47,13 @@ class PurchaseOrdersController < ApplicationController
             redirect_to purchase_orders_path
         end
     end
+
+    def edit_or_delete
+        set_po_purchase_order
+        redirect_to purchase_orders_path, alert: "Editing permissions denied" unless !!authorized
+    end
+
+    def authorized
+        helpers.current_user == @purchase_order.user
+     end
 end

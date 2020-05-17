@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_16_204623) do
+ActiveRecord::Schema.define(version: 2020_05_17_033631) do
 
   create_table "materials", force: :cascade do |t|
     t.string "name"
@@ -32,6 +32,16 @@ ActiveRecord::Schema.define(version: 2020_05_16_204623) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["product_id"], name: "index_po_products_on_product_id"
     t.index ["purchase_order_id"], name: "index_po_products_on_purchase_order_id"
+  end
+
+  create_table "product_materials", force: :cascade do |t|
+    t.integer "quantity"
+    t.integer "product_id", null: false
+    t.integer "material_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["material_id"], name: "index_product_materials_on_material_id"
+    t.index ["product_id"], name: "index_product_materials_on_product_id"
   end
 
   create_table "products", force: :cascade do |t|
@@ -68,6 +78,8 @@ ActiveRecord::Schema.define(version: 2020_05_16_204623) do
   add_foreign_key "materials", "users"
   add_foreign_key "po_products", "products"
   add_foreign_key "po_products", "purchase_orders"
+  add_foreign_key "product_materials", "materials"
+  add_foreign_key "product_materials", "products"
   add_foreign_key "products", "users"
   add_foreign_key "purchase_orders", "users"
 end
