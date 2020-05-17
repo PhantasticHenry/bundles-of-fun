@@ -1,6 +1,7 @@
 class MaterialsController < ApplicationController
     before_action :logged_in?
     before_action :set_material, only: [:show, :edit, :update, :destroy]
+    before_action :edit_or_delete, only: [:edit, :update, :destroy]
 
     def index 
         @materials = Material.all
@@ -24,11 +25,19 @@ class MaterialsController < ApplicationController
     end
 
     def edit 
-
+    end
+    
+    def update
+        if @material.update(material_params)
+            redirect_to material_path(@material)
+        else 
+            render :new
+        end
     end
 
-    def update
-    
+    def destroy 
+        @material.destroy 
+        redirect_to materials_path
     end
 
     private 
@@ -41,6 +50,15 @@ class MaterialsController < ApplicationController
         if !@material 
             reidrect_to materials_path
         end
+    end
+
+    def edit_or_delete 
+        set_material
+        redirect_to materials_path, alert: "Editing permissions denied" unless !!authorized 
+    end
+
+    def authorized 
+        helpers.current_user == @product.user
     end
 
 

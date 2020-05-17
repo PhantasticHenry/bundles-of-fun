@@ -18,8 +18,10 @@ ActiveRecord::Schema.define(version: 2020_05_16_204623) do
     t.string "size"
     t.string "sku"
     t.string "category"
+    t.integer "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_materials_on_user_id"
   end
 
   create_table "po_products", force: :cascade do |t|
@@ -63,6 +65,7 @@ ActiveRecord::Schema.define(version: 2020_05_16_204623) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "materials", "users"
   add_foreign_key "po_products", "products"
   add_foreign_key "po_products", "purchase_orders"
   add_foreign_key "products", "users"
