@@ -7,6 +7,10 @@ class ProductsController < ApplicationController
         @products = Product.all
     end
 
+    def bags 
+        @products = Product.all.bags
+    end
+
     def new 
         @product = Product.new
     end
