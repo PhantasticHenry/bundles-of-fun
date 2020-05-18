@@ -1,16 +1,17 @@
 Rails.application.routes.draw do
   
-  resources :materials
   root 'static_pages#home'
   get 'login', to: 'sessions#new'
   post 'login', to: 'sessions#create'
   get 'signup', to: 'users#new'
   get 'logout', to: 'sessions#destroy'
+  get 'bags', to: 'products#bags'
   
-  resources :sessions, only: [:new, :create, :destroy]
+  resources :users
   resources :po_products
   resources :product_materials
-  resources :users
+  resources :materials
+  resources :sessions, only: [:new, :create, :destroy]
   
   resources :purchase_orders do 
     resources :po_products
