@@ -28,7 +28,11 @@ class PurchaseOrdersController < ApplicationController
     end
 
     def update
-        @purchase_order.update()
+        if @purchase_order.update(po_params)
+            redirect_to purchase_orders_path(@purchase_order)
+        else
+            render :new
+        end
     end
 
     def destroy 
