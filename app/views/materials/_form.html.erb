@@ -5,8 +5,8 @@
 <%= form_for @material do |f| %>
     <%= f.text_field :name, placeholder: "Name", required: true, class: "form-control", autofocus: true %><br>
     <%= f.text_field :sku, placeholder: "SKU", required: true, class: "form-control" %><br>
-    <%= f.select :color, ["Coyote", "Black", "Multicam"], prompt: "Color" %><br><br>
-    <%= f.select :category, ["Hardware", "Webbing", "Velcro"], prompt: "Type"%><br><br>
+    <%= f.select :color, ["coyote", "black", "multicam"], prompt: "Color" %><br><br>
+    <%= f.select :category, ["hardware", "webbing", "velcro"], prompt: "Type"%><br><br>
     <%= f.select :size, ['.5"', '.75"', '1"', '1.5"', '2"'], prompt: "Size" %><br><br>
 <%= button_to "Back", :back, class: "btn btn-primary", method: :get %>
         <hr>
