@@ -1,25 +1,17 @@
-# README
+Bundles Of Fun
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Installation Guide:
 
-Things you may want to cover:
+Pull request on Github at https://github.com/PhantasticHenry/rails-project-bundle.git
 
-* Ruby version
+In terminal run: 
+$ rails s (start up rails server)
+$ localhost:3000 (or another port you use)
 
-* System dependencies
+This is a Flatiron school Rails portfolio project.  
 
-* Configuration
+ - Within the application you can create a user
 
-* Database creation
+ - The user can (create, edit, and delete) purchase orders, products, and materials.
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-# rails-project-bundle
+ - Assign product to a purchase order and material to a product.
