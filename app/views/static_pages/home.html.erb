@@ -98,13 +98,26 @@
         </section>
         <!-- materials-->
         <% if logged_in? %>
+        
         <section class="page-section" id="materials">
+    
+        <div class="row justify-content-center">
+            <div class="col-lg-8 text-center">
+                <% if logged_in? %>
+                    <h2 class="text-center mt-0">Materials</h2>
+                    <hr class="divider my-4" />
+                    <p class="text-white-50 mb-4">click below to view all materials</p>
+                    <a class="btn btn-primary btn-xl js-scroll-trigger" href="/materials">All Materials</a>
+                    <a class="btn btn-primary btn-xl js-scroll-trigger" href="/materials/new">Create New Material</a>
+                <% end %>
+                </div>
+            </div>
+        </div>
+        
+        
+        
             <div class="container">
-                <h2 class="text-center mt-0">Materials</h2>
-                <hr class="divider my-4" />
-                <p class="text-white-50 mb-4">click below to view all materials</p>
-                <a class="btn btn-light btn-xl js-scroll-trigger" href="/materials">All Materials</a>
-                <a class="btn btn-light btn-xl js-scroll-trigger" href="/materials/new">Create New Material</a>
+                <div class="row justify-content-center">
                 </div>
             </div>
         </section>
