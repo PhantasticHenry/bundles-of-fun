@@ -18,7 +18,11 @@
         <% end %>
     <% end %>-->
         <hr>
-    <%= f.button "Assign Product to P.O.", class: "btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2" %>
+    <% if current_page?(po_product_path(f)) %>
+        <%= f.button "Assign Product to P.O.", class: "btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2" %>
+    <% else %>
+        <%= f.button "Update Purchase Order Product", class: "btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2" %>
+    <% end %>
     <hr>
     Dont't see product or purchase order?
     <hr>
