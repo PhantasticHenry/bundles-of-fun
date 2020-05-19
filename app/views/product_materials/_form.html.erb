@@ -7,7 +7,7 @@
     <%= f.collection_select :product_id, Product.all, :id, :name, prompt: "Product" %><br><br>
     <%= f.collection_select :material_id, Material.all, :id, :name, prompt: "Material" %>
     <hr>
-    <% if current_page?(po_product_path(f)) %>
+    <% if current_page?(new_product_material_path) %>
         <%= f.button "Assign Material to Product", class: "btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2" %>
     <% else %>
         <%= f.button "Update Product Material", class: "btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2" %>
