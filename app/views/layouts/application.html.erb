@@ -15,18 +15,15 @@
       <div id="mySidenav" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
         <a href="/"><i class="fa fa-home"></i> Home</a>
-        <% if controller_name == 'purchase_orders' %>
-          <a href="/products">Products</a>
-          <a href="/materials">Materials</a>
-        <a href="/logout">Log Out</a>
-        <% elsif controller_name == 'products' || controller_name == 'po_products' %>
+        <% if logged_in? %>
           <a href="/purchase_orders">Purchase Orders</a>
+          <a href="/products">Products</a>
           <a href="/materials">Materials</a>
         <a href="/logout">Log Out</a>
         <% else %>
           <a href="/purchase_orders">Purchase Orders</a>
           <a href="/products">Products</a>
-        <a href="/logout">Log Out</a>
+          <a href="/materials">Materials</a>
         <% end %>
       </div>
       <div class="fixed-top" id="main">
