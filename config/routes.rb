@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get 'logout', to: 'sessions#destroy'
   get 'bag', to: 'products#bag'
   get 'harness', to: 'products#harness'
+  get 'multicam_color', to: 'po_products#multicam_color'
   
   resources :users
   resources :po_products
