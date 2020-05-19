@@ -10,10 +10,10 @@
         <% @products.each do |p| %>
     </tr>
         <td><%= button_to p.name, product_path(p), method: :get %></td>
-        <td><%= p.color %></td>
-        <td><%= p.size %></td>
+        <td><%= p.color.titlecase %></td>
+        <td><%= p.size.upcase %></td>
         <td><%= p.sku %></td>
-        <td><%= p.category %></td>
+        <td><%= p.category.titlecase %></td>
     </tr>
         <% end %>
 </table>
