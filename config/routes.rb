@@ -5,7 +5,8 @@ Rails.application.routes.draw do
   post 'login', to: 'sessions#create'
   get 'signup', to: 'users#new'
   get 'logout', to: 'sessions#destroy'
-  get 'bags', to: 'products#bags'
+  get 'bag', to: 'products#bag'
+  get 'harness', to: 'products#harness'
   
   resources :users
   resources :po_products

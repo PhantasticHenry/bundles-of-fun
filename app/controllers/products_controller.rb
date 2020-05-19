@@ -7,8 +7,12 @@ class ProductsController < ApplicationController
         @products = Product.all
     end
 
-    def bags 
-        @products = Product.all.bags
+    def bag
+        @products = Product.all.bag
+    end
+
+    def harness
+        @products = Product.all.harness
     end
 
     def new 

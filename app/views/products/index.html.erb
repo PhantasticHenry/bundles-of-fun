@@ -5,7 +5,7 @@
 <select onchange="window.location=this.value">
   <option>View by Type</option>
   <% @products.each do |p| %> 
-    <option value="/<%= p.category %>s"><%= p.category %></option>
+    <option value="/<%= p.category %>"><%= p.category %></option>
   <% end %>
 </select><br><br>
 
