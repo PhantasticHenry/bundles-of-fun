@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   get 'logout', to: 'sessions#destroy'
   get 'bag', to: 'products#bag'
   get 'harness', to: 'products#harness'
+  get '/auth/facebook/callback', to: 'sessions#omni'
+  get '/auth/google_oauth2/callback', to: 'sessions#omni'
   
   resources :users
   resources :po_products
