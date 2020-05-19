@@ -11,6 +11,10 @@ class PoProductsController < ApplicationController
         end
     end
 
+    def multicam_color
+        @po_products = PoProduct.all.multicam_color
+    end
+
     def new
         @po_product = PoProduct.new(purchase_order_id: params[:purchase_order_id])
     end
