@@ -7,7 +7,7 @@ class PoProductsController < ApplicationController
         if params[:purchase_order_id] && @purchase_order = PurchaseOrder.find_by(id: params[:purchase_order_id])
             @po_products = @purchase_order.po_products
         else
-            @po_products = PoProduct.all
+            @po_products = PoProduct.all.most_recent
         end
     end
 
