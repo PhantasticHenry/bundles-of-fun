@@ -18,7 +18,7 @@
         <% end %>
     <% end %>-->
         <hr>
-    <% if current_page?(new_po_product_path(f)) %>
+    <% if current_page?(new_po_product_path) %>
         <%= f.button "Assign Product to P.O.", class: "btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2" %>
     <% else %>
         <%= f.button "Update Purchase Order Product", class: "btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2" %>
@@ -28,5 +28,8 @@
     <hr>
     <%= link_to "Create Product", new_product_path, class: "btn btn-primary" %> OR 
     <%= link_to "Create Purchase Order", new_purchase_order_path, class: "btn btn-primary" %><hr>
-    <%= link_to "Back", :back, class: "btn btn-primary" %>
+    <%= link_to "Back", :back, class: "btn btn-primary" %>&nbsp;&nbsp;&nbsp;
+    <% if controller.action_name == 'edit' %>
+        <%= link_to "Delete", po_product_path(@po_product), method: :delete, class: "btn btn-primary",data: {confirm: "Are you sure?"} %>
+    <% end %>
 <% end %>
