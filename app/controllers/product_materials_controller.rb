@@ -40,7 +40,7 @@ class ProductMaterialsController < ApplicationController
 
     def destroy
         @product_material.destroy 
-        redirect_to root_path
+        redirect_to product_product_materials_path(@product_material)
     end
 
     private 
