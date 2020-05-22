@@ -9,7 +9,7 @@
         <th>Quantity</th>
         <% @product_materials.each do |pm| %>
     </tr>
-        <td><%= button_to pm.material.name, product_path(pm.material), method: :get %></td>
+        <td><%= button_to pm.material.name, product_product_material_path(pm.product, pm), method: :get %></td>
         <td><%= pm.material.color %></td>
         <td><%= pm.material.size %></td>
         <td><%= pm.material.sku %></td>
@@ -20,5 +20,8 @@
 </table>
 <hr>
 <%= link_to "Back", :back, class: "btn btn-primary" %>
+<% if controller.action_name == 'edit' %>
+    <%= link_to "Delete", po_product_path(@po_product), method: :delete, class: "btn btn-primary",data: {confirm: "Are you sure?"} %>
+<% end %>
 
 
