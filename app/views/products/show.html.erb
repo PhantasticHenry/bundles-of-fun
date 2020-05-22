@@ -6,11 +6,11 @@
         <th>SKU</th>
         <th>Type</th>
     </tr>
-        <td><%= @product.name %></td>
-        <td><%= @product.color %></td>
-        <td><%= @product.size %></td>
+        <td><%= @product.name.titleize %></td>
+        <td><%= @product.color.titleize %></td>
+        <td><%= @product.size.upcase %></td>
         <td><%= @product.sku %></td>
-        <td><%= @product.category %></td>
+        <td><%= @product.category.titleize %></td>
     </tr>
 </table>
 <hr>
