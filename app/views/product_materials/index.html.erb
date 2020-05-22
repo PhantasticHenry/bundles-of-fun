@@ -14,14 +14,12 @@
         <td><%= pm.material.size %></td>
         <td><%= pm.material.sku %></td>
         <td><%= pm.material.category %></td>
-        <td><%= button_to pm.quantity, edit_product_product_material_path(pm.product, pm), method: :get %></td>
+        <td><%= pm.quantity %></td>
     </tr>
         <% end %>
 </table>
 <hr>
 <%= link_to "Back", :back, class: "btn btn-primary" %>
-<% if controller.action_name == 'edit' %>
-    <%= link_to "Delete", po_product_path(@po_product), method: :delete, class: "btn btn-primary",data: {confirm: "Are you sure?"} %>
-<% end %>
+
 
 
