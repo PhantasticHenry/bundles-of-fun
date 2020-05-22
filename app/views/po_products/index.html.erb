@@ -1,4 +1,8 @@
-<h2 class="po-index-heading mb-4">Product of Purchase Order # <%= @purchase_order.try(:po) %></h2>
+<% if @purchase_order %>
+    <h2 class="po-index-heading mb-4">Product of Purchase Order # <%= @purchase_order.try(:po) %></h2>
+<% else %>
+    <h2 class="po-index-heading mb-4">Purchase Order Products</h2>
+<% end %>
 <%= render partial: 'shared/flash_errors', locals: {model: @po_product} %>
 
 
@@ -12,7 +16,7 @@
         <th>Quantity</th>
         <% @po_products.each do |p| %>
     </tr>
-        <td><%= button_to p.product.name, product_path(p.product), method: :get %></td>
+        <td><%= button_to p.product.name, purchase_order_path(p.purchase_order), method: :get %></td>
         <td><%= p.product.color.titlecase %></td>
         <td><%= p.product.size.upcase %></td>
         <td><%= p.product.sku %></td>
