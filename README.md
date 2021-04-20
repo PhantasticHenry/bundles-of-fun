@@ -1,4 +1,4 @@
-Bundles Of Fun
+Rails Project Bundle
 
 Installation Guide:
 
