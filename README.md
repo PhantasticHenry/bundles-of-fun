@@ -2,7 +2,7 @@ Rails Project Bundle
 
 Installation Guide:
 
-Pull request on Github at https://github.com/PhantasticHenry/rails-project-bundle.git
+Pull request on Github at https://github.com/PhantasticHenry/bundles-of-fun
 
 In terminal run: 
 $ rails s (start up rails server)
