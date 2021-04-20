@@ -928,9 +928,9 @@
   "version" "3.0.4"
 
 "@types/node@*":
-  "integrity" "sha512-Qipn7rfTxGEDqZiezH+wxqWYR8vcXq5LRpZrETD19Gs4o8LbklbmqotSUsMU+s5G3PJwMRDfNEYoxrcBwIxOuw=="
-  "resolved" "https://registry.npmjs.org/@types/node/-/node-14.14.39.tgz"
-  "version" "14.14.39"
+  "integrity" "sha512-dueRKfaJL4RTtSa7bWeTK1M+VH+Gns73oCgzvYfHZywRCoPSd8EkXBL0mZ9unPTveBn+D9phZBaxuzpwjWkW0g=="
+  "resolved" "https://registry.npmjs.org/@types/node/-/node-14.14.41.tgz"
+  "version" "14.14.41"
 
 "@types/parse-json@^4.0.0":
   "integrity" "sha512-//oorEZjL6sbPcKUaCdIGlIUeH26mgzimjBB77G6XRgnDl/L5wOnpyBGRe/Mmf5CVW3PwEBE1NjiMZ/ssFh4wA=="
@@ -1627,7 +1627,7 @@
   dependencies:
     "pako" "~1.0.5"
 
-"browserslist@^4.0.0", "browserslist@^4.12.0", "browserslist@^4.14.5", "browserslist@^4.16.3", "browserslist@^4.6.4":
+"browserslist@^4.0.0", "browserslist@^4.12.0", "browserslist@^4.14.5", "browserslist@^4.16.4", "browserslist@^4.6.4":
   "integrity" "sha512-d7rCxYV8I9kj41RH8UKYnvDYCRENUlHRgyXy/Rhr/1BaeLGfiCptEdFE8MIrvGfWbBFNjVYx76SQWvNX1j+/cQ=="
   "resolved" "https://registry.npmjs.org/browserslist/-/browserslist-4.16.4.tgz"
   "version" "4.16.4"
@@ -1798,9 +1798,9 @@
     "lodash.uniq" "^4.5.0"
 
 "caniuse-lite@^1.0.0", "caniuse-lite@^1.0.30000981", "caniuse-lite@^1.0.30001109", "caniuse-lite@^1.0.30001208":
-  "integrity" "sha512-OE5UE4+nBOro8Dyvv0lfx+SRtfVIOM9uhKqFmJeUbGriqhhStgp1A0OyBpgy3OUF8AhYCT+PVwPC1gMl2ZcQMA=="
-  "resolved" "https://registry.npmjs.org/caniuse-lite/-/caniuse-lite-1.0.30001208.tgz"
-  "version" "1.0.30001208"
+  "integrity" "sha512-v3GXWKofIkN3PkSidLI5d1oqeKNsam9nQkqieoMhP87nxOY0RPDC8X2+jcv8pjV4dRozPLSoMqNii9sDViOlIg=="
+  "resolved" "https://registry.npmjs.org/caniuse-lite/-/caniuse-lite-1.0.30001211.tgz"
+  "version" "1.0.30001211"
 
 "case-sensitive-paths-webpack-plugin@^2.2.0":
   "integrity" "sha512-roIFONhcxog0JSSWbvVAh3OocukmSgpqOH6YpMkCvav/ySIV3JKg4Dc8vYtQjYi/UxpNE36r/9v+VqTQqgkYmw=="
@@ -2108,17 +2108,17 @@
   "version" "0.1.1"
 
 "core-js-compat@^3.9.0", "core-js-compat@^3.9.1":
-  "integrity" "sha512-ZHQTdTPkqvw2CeHiZC970NNJcnwzT6YIueDMASKt+p3WbZsLXOcoD392SkcWhkC0wBBHhlfhqGKKsNCQUozYtg=="
-  "resolved" "https://registry.npmjs.org/core-js-compat/-/core-js-compat-3.10.1.tgz"
-  "version" "3.10.1"
+  "integrity" "sha512-IGHnpuaM1N++gLSPI1F1wu3WXICPxSyj/Q++clcwsIOnUVp5uKUIPl/+6h0TQ112KU3fMiSxqJuM+OrCyKj5+A=="
+  "resolved" "https://registry.npmjs.org/core-js-compat/-/core-js-compat-3.10.2.tgz"
+  "version" "3.10.2"
   dependencies:
-    "browserslist" "^4.16.3"
+    "browserslist" "^4.16.4"
     "semver" "7.0.0"
 
 "core-js@^3.4.0":
-  "integrity" "sha512-pwCxEXnj27XG47mu7SXAwhLP3L5CrlvCB91ANUkIz40P27kUcvNfSdvyZJ9CLHiVoKSp+TTChMQMSKQEH/IQxA=="
-  "resolved" "https://registry.npmjs.org/core-js/-/core-js-3.10.1.tgz"
-  "version" "3.10.1"
+  "integrity" "sha512-W+2oVYeNghuBr3yTzZFQ5rfmjZtYB/Ubg87R5YOmlGrIb+Uw9f7qjUbhsj+/EkXhcV7eOD3jiM4+sgraX3FZUw=="
+  "resolved" "https://registry.npmjs.org/core-js/-/core-js-3.10.2.tgz"
+  "version" "3.10.2"
 
 "core-util-is@~1.0.0", "core-util-is@1.0.2":
   "integrity" "sha1-tf1UIgqivFq1eqtxQMlAdUUDwac="
@@ -4792,9 +4792,9 @@
     "kind-of" "^3.0.3"
 
 "object-inspect@^1.9.0":
-  "integrity" "sha512-i3Bp9iTqwhaLZBxGkRfo5ZbE07BQRT7MGu8+nNgwW9ItGp1TzCTw2DLEoWwjClxBjOFI/hWljTAmYGCEwmtnOw=="
-  "resolved" "https://registry.npmjs.org/object-inspect/-/object-inspect-1.9.0.tgz"
-  "version" "1.9.0"
+  "integrity" "sha512-gz58rdPpadwztRrPjZE9DZLOABUpTGdcANUgOwBFO1C+HZZhePoP83M65WGDmbpwFYJSWqavbl4SgDn4k8RYTA=="
+  "resolved" "https://registry.npmjs.org/object-inspect/-/object-inspect-1.10.2.tgz"
+  "version" "1.10.2"
 
 "object-is@^1.0.1":
   "integrity" "sha512-3cyDsyHgtmi7I7DfSSI2LDp6SK2lwvtbg0p0R1e0RvTqF5ceGx+K2dfSjm1bKDMVCFEDAQvy+o8c6a7VujOddw=="
@@ -5789,13 +5789,11 @@
     "uniq" "^1.0.1"
 
 "postcss-selector-parser@^6.0.0", "postcss-selector-parser@^6.0.2":
-  "integrity" "sha512-gjMeXBempyInaBqpp8gODmwZ52WaYsVOsfr4L4lDQ7n3ncD6mEyySiDtgzCT+NYC0mmeOLvtsF8iaEf0YT6dBw=="
-  "resolved" "https://registry.npmjs.org/postcss-selector-parser/-/postcss-selector-parser-6.0.4.tgz"
-  "version" "6.0.4"
+  "integrity" "sha512-aFYPoYmXbZ1V6HZaSvat08M97A8HqO6Pjz+PiNpw/DhuRrC72XWAdp3hL6wusDCN31sSmcZyMGa2hZEuX+Xfhg=="
+  "resolved" "https://registry.npmjs.org/postcss-selector-parser/-/postcss-selector-parser-6.0.5.tgz"
+  "version" "6.0.5"
   dependencies:
     "cssesc" "^3.0.0"
-    "indexes-of" "^1.0.1"
-    "uniq" "^1.0.1"
     "util-deprecate" "^1.0.2"
 
 "postcss-svgo@^4.0.3":
