@@ -1,18 +1,5 @@
-// Place all the styles related to the static_pages controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
 @charset "UTF-8";
-/*!
-* Start Bootstrap - Creative v6.0.1 (https://startbootstrap.com/themes/creative)
-* Copyright 2013-2020 Start Bootstrap
-* Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-creative/blob/master/LICENSE)
-*/
-/*!
- * Bootstrap v4.4.1 (https://getbootstrap.com/)
- * Copyright 2011-2019 The Bootstrap Authors
- * Copyright 2011-2019 Twitter, Inc.
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
- */
+
 :root {
   --blue: #007bff;
   --indigo: #6610f2;
@@ -9986,6 +9973,8 @@ hr.light {
   padding: 1.25rem 2.25rem;
   font-size: 0.85rem;
   font-weight: 700;
+  width: 250px;
+  margin: 1rem;
   text-transform: uppercase;
   border: none;
   border-radius: 10rem;
